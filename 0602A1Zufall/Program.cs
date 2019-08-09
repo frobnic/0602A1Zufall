@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _0602A1Zufall
 {
@@ -26,19 +22,24 @@ namespace _0602A1Zufall
             Console.WriteLine("Bitte geben Sie eine Zahl zwischen 1 und 50000 ein");
             a = uint.Parse(Console.ReadLine());
 
-            for (int i = 0; i < 100000; i++)
-            {
-                if (a == feld[i])
-                {
-                    found = true;
-                    index = i;
-                    break;
-                }
-            }
-            if (found)
-                Console.WriteLine("Yippie! Gefunden an Position {0}!",index);
+            if (a < 0 || a > 50000)
+                Console.WriteLine("You rocking fetard!");
             else
-                Console.WriteLine("You lost. Again.");
+            {
+                for (int i = 0; i < 100000; i++)
+                {
+                    if (a == feld[i])
+                    {
+                        found = true;
+                        index = i;
+                        break;
+                    }
+                }
+                if (found)
+                    Console.WriteLine("Yippie! Gefunden an Position {0}!", index);
+                else
+                    Console.WriteLine("You lost. Again.");
+            }
         }
     }
 }
