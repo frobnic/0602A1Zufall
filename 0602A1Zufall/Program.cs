@@ -22,8 +22,8 @@ namespace _0602A1Zufall
             Console.WriteLine("Bitte geben Sie eine Zahl zwischen 1 und 50000 ein");
             a = uint.Parse(Console.ReadLine());
 
-            if (a < 0 || a > 50000)
-                Console.WriteLine("You rocking fetard!");
+            if (a < 1 || a > 50000)
+                Console.WriteLine("Fehleingabe!");
             else
             {
                 for (int i = 0; i < 100000; i++)
@@ -38,7 +38,7 @@ namespace _0602A1Zufall
                 if (found)
                     Console.WriteLine("Yippie! Gefunden an Position {0}!", index);
                 else
-                    Console.WriteLine("You lost. Again.");
+                    Console.WriteLine("Verloren!");
             }
         }
     }
