@@ -13,6 +13,10 @@ namespace _0602A1Zufall
             uint[] feld = new uint[100000];
             Random zuf = new Random();
             uint a;
+            Boolean found = false;
+            int index = 0;
+
+            Console.WriteLine("Generating more random...");
 
             for (int i = 0; i < 100000; i++)
             {
@@ -22,6 +26,19 @@ namespace _0602A1Zufall
             Console.WriteLine("Bitte geben Sie eine Zahl zwischen 1 und 50000 ein");
             a = uint.Parse(Console.ReadLine());
 
+            for (int i = 0; i < 100000; i++)
+            {
+                if (a == feld[i])
+                {
+                    found = true;
+                    index = i;
+                    break;
+                }
+            }
+            if (found)
+                Console.WriteLine("Yippie! Gefunden an Position {0}!",index);
+            else
+                Console.WriteLine("You lost. Again.");
         }
     }
 }
